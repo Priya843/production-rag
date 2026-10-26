@@ -1,0 +1,9 @@
+# Optional: run Qdrant as a server (dashboard at http://localhost:6333/dashboard).
+# Then set QDRANT_URL=http://localhost:6333 in .env and re-run scripts/ingest.py.
+services:
+  qdrant:
+    image: qdrant/qdrant:v1.20.0
+    ports:
+      - "6333:6333"
+    volumes:
+      - ./qdrant_storage:/qdrant/storage
